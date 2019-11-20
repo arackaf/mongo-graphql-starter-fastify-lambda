@@ -1,0 +1,25 @@
+service: mongo-graphql-starter-fastify-lambda
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  memorySize: 256
+  timeout: 300
+
+functions:
+  graphql:
+    handler: src/index.handler
+    name: mongo-graphql-starter-fastify-lambda
+    description: mongo-graphql-starter implementation for Fastify running on AWS Lambda
+    events:
+      - http:
+          path: graphql
+          method: POST
+          cors: true
+      - http:
+          path: /
+          method: GET
+          cors: true
