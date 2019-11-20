@@ -6,6 +6,7 @@
   "scripts": {
     "init": "node config/generate-schema.js",
     "start": "nodemon --exec \"serverless offline start -r us-east-1 --noTimeout --port 3000 --host 0.0.0.0 --skipCacheInvalidation\"",
+    "start-server": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

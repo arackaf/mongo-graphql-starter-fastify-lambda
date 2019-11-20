@@ -44,5 +44,16 @@ app.register(fastifyGql, {
   graphiql: true
 });
 
+if (require.main === module) {
+  // called directly i.e. "node app"
+  app.listen(3000, err => {
+    if (err) console.error(err);
+    console.log("Server listening on port 3000");
+  });
+} else {
+  // required as a module => executed on aws lambda
+  module.exports = app;
+}
+
 // Export the App
-module.exports = app;
+//module.exports = app;
