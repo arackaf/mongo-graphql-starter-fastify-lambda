@@ -4,6 +4,7 @@
   "description": "mongo-graphql-starter implementation for Fastify running on AWS Lambda",
   "main": "index.js",
   "scripts": {
+    "init": "node config/generate-schema.js",
     "start": "nodemon --exec \"serverless offline start -r us-east-1 --noTimeout --port 3000 --host 0.0.0.0 --skipCacheInvalidation\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +25,12 @@
   },
   "dependencies": {
     "aws-lambda-fastify": "^1.3.0",
+    "aws-serverless-express": "^3.3.6",
     "fastify": "^2.10.0",
-    "fastify-gql": "^2.0.1"
+    "fastify-gql": "^2.0.1",
+    "fastify-mongodb": "^2.0.0",
+    "graphql-tools": "^4.0.6",
+    "mongo-graphql-starter": "^0.11.0",
+    "mongodb": "^3.3.4"
   }
 }
