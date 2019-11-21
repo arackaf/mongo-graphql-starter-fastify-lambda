@@ -1,10 +1,10 @@
 const GraphQLJSON = require("graphql-type-json");
 
-const BookRest = require("./Book/resolver");
-const SubjectRest = require("./Subject/resolver");
+const BookImport = require("./Book/resolver");
+const SubjectImport = require("./Subject/resolver");
 
-const { Query: BookQuery, Mutation: BookMutation } = BookRest;
-const { Query: SubjectQuery, Mutation: SubjectMutation } = SubjectRest;
+const { Query: BookQuery, Mutation: BookMutation, ...BookRest } = BookImport;
+const { Query: SubjectQuery, Mutation: SubjectMutation, ...SubjectRest } = SubjectImport;
 
 module.exports = {
   JSON: GraphQLJSON,
